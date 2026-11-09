@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gear World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1 class="logo"><span class="logo-gear">⚙</span> Gear World</h1>
+      <nav class="levels" id="levelButtons" aria-label="Levels"></nav>
+    </header>
+
+    <section class="level-info">
+      <div>
+        <h2 id="levelName">Level</h2>
+        <p id="objective"></p>
+      </div>
+      <div class="actions">
+        <button id="hintBtn" class="btn ghost">Show hint</button>
+        <button id="resetBtn" class="btn ghost">Reset</button>
+        <button id="muteBtn" class="btn ghost" aria-label="Toggle sound">🔊</button>
+      </div>
+    </section>
+
+    <div class="board-wrap">
+      <canvas id="board" aria-label="Game board"></canvas>
+      <div id="winOverlay" class="overlay hidden">
+        <div class="overlay-card">
+          <div class="overlay-gear">⚙</div>
+          <h3 id="winTitle">Level complete!</h3>
+          <p id="winText"></p>
+          <div class="overlay-actions">
+            <button id="replayBtn" class="btn ghost">Replay</button>
+            <button id="nextBtn" class="btn primary">Next level</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p id="status" class="status">Drag gears from the toolbox onto the pegs.</p>
+
+    <section class="toolbox">
+      <h3>Toolbox</h3>
+      <div id="tray" class="tray"></div>
+      <p class="tip">Drag a gear onto a peg, or tap a gear and then tap a peg. Tap a placed gear to take it back.</p>
+    </section>
+  </div>
+
+  <img id="dragImg" class="drag-img hidden" alt="">
+
+  <script src="engine.js"></script>
+  <script src="levels.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
